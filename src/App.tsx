@@ -1,35 +1,22 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import WalletScreen from './src/components/WalletScreen';
+import P2PTransaction from './src/components/P2PTransaction';
+import { TbdexHttpClient, Rfq, Quote, Order, OrderStatus, Close, Message } from '@tbdex/http-client';
+import { VerifiableCredential, PresentationExchange } from '@web5/credentials';
+
+
+const Stack = createStackNavigator();
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Wallet" component={WalletScreen} />
+        <Stack.Screen name="P2P" component={P2PTransaction} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
 }
 
-export default App
+export default App;

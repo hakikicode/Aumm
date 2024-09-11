@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { initWallet, walletDeposit } from '../services/tbDEXClient';
+import { TbdexHttpClient, Rfq, Quote, Order, OrderStatus, Close, Message } from '@tbdex/http-client';
+import { VerifiableCredential, PresentationExchange } from '@web5/credentials';
 
 const WalletScreen = () => {
   const [client, setClient] = useState(null);

@@ -1,50 +1,36 @@
-# React + TypeScript + Vite
+# Aumm is cross border payment wallet system that allow users to perform limitless transactions
+ 
+# Aumm Wallet Project - Cross-Border Payment Platform
+Description: Aumm will launch or partner with a stable coin backed by Naira (1:1 ratio) built on bitcoin and Multichain, with a total supply of 999 trillion tokens. This React Native app enables cross-border payments using P2P, wallet deposits/withdrawals, and eNaira integrations, while tracking token balances and allowing transactions.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Features:
+P2P Payments via tbDEX API.
+Wallet Deposits/Withdrawals using NGCoin.
+eNaira API Integration for fiat transactions.
+Native Token (NGCoin) for CEX/DEX.
+# Community Engagement:
+NGCoin Game on Telegram: Join NGCoin using my referral link: https://t.me/NGCoinAppBot/NGCoin?startapp=ref_skdpu7vx
+Installation:
+Clone the repository:
+bash
+Copy code
+git clone <repo-url>
+Install dependencies:
+bash
+Copy code
+npm install
+Start the app:
+bash
+Copy code
+npm run ios
+# or
+npm run android
+Smart Contract:
+NGCoin.sol (ERC-20 Token)
+Total Supply: 999 trillion
+Mintable/Ownable by contract owner.
+Web3 Integration:
+Uses Web3.js for token transactions and balance tracking within the app.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+License:
+MIT License

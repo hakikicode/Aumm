@@ -10,6 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@tbdex/http-client": "^1.1.0",
+    "@web5/credentials": "^1.0.3",
+    "@web5/dids": "^1.1.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
