@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { View, TextInput, Button } from 'react-native';
 import { initWallet, walletDeposit } from '../services/tbDEXClient';
-import { TbdexHttpClient, Rfq, Quote, Order, OrderStatus, Close, Message } from '@tbdex/http-client';
-import { VerifiableCredential, PresentationExchange } from '@web5/credentials';
 
 const WalletScreen = () => {
   const [client, setClient] = useState(null);
+  const [walletAddress, setWalletAddress] = useState('');
+  const [amount, setAmount] = useState('');
 
   useEffect(() => {
     const setup = async () => {
@@ -14,17 +15,27 @@ const WalletScreen = () => {
     setup();
   }, []);
 
-  const handleDeposit = async (walletAddress, amount) => {
-    if (client) {
-      const result = await walletDeposit(client, walletAddress, amount);
+  const handleDeposit = async () => {
+    if (client && walletAddress && amount) {
+      const result = await walletDeposit(client, walletAddress, parseFloat(amount));
       console.log('Deposit Result:', result);
     }
   };
 
   return (
     <View>
-      <TextInput placeholder="Wallet Address" />
-      <Button onPress={() => handleDeposit('walletAddressHere', 100)} title="Deposit" />
+      <TextInput
+        placeholder="Wallet Address"
+        value={walletAddress}
+        onChangeText={setWalletAddress}
+      />
+      <TextInput
+        placeholder="Amount"
+        keyboardType="numeric"
+        value={amount}
+        onChangeText={setAmount}
+      />
+      <Button onPress={handleDeposit} title="Deposit" />
     </View>
   );
 };

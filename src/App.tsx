@@ -2,8 +2,6 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import WalletScreen from '../src/components/WalletScreen';
 import P2PTransaction from '../src/components/P2PTransaction';
-import { TbdexHttpClient, Rfq, Quote, Order, OrderStatus, Close, Message } from '@tbdex/http-client';
-import { VerifiableCredential, PresentationExchange } from '@web5/credentials';
 import ExchangeRates from '../src/components/ExchangeRates';
 
 

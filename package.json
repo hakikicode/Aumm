@@ -13,7 +13,8 @@
     "@react-navigation/native": "^6.1.18",
     "@react-navigation/stack": "^6.4.1",
     "@tbdex/http-client": "^1.1.0",
-    "@web5/credentials": "^1.1.1",
+    "@web5/api": "^0.10.0",
+    "@web5/credentials": "^1.0.3",
     "@web5/dids": "^1.1.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
