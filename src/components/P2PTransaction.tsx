@@ -1,6 +1,14 @@
 import React, { useState } from 'react';
 import { View, TextInput, Button, Text } from 'react-native';
-import { requestQuote, createOrder } from './services/tbdexService';
+import { requestQuote, createOrder } from '../services/tbdexService';
+import { VerifiableCredential, PresentationExchange } from '@web5/credentials';
+
+// verify a credential
+export const verifyCredential = async (credential: VerifiableCredential) => {
+  const exchange = new PresentationExchange();
+  const verificationResult = await exchange.verifyPresentation(credential);
+  return verificationResult;
+};
 
 const P2PTransaction = () => {
   const [recipient, setRecipient] = useState('');
